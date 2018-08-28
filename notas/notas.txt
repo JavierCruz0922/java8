@@ -1,3 +1,6 @@
+Paths
+- http://kl1p.com/GSLunes
+- https://gruposalinas.netecdigital.com/
 
 -- certificaciones --
 1Z0 808 asociados		150 dolares 
@@ -73,3 +76,8 @@ Sobre carga
  	}
 
  }
+
+ funcional
+
+
+congelada, cerrada, abierta, sobregirada 

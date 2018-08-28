@@ -7,12 +7,13 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import servicio.ServicioAClientes;
 
 /**
  *
  * @author 180827Gpo.Salinas
  */
-public class Banco {
+public class Banco implements ServicioAClientes{
 
     private Banco banco;
     private String nombre;
@@ -38,6 +39,7 @@ public class Banco {
             this.domicilio = domicilio;
             this.rfc = rfc;
             this.telefono = telefono;
+            this.clientes = new ArrayList<>();
         }
     }
     
@@ -134,7 +136,50 @@ public class Banco {
     }
 
     //Method
+    @Override
     public void altaCliente(Cliente cliente) {
         this.clientes.add(cliente);
     }
+
+    @Override
+    public void bajaCliente(int numero) {
+        for(Cliente cliente : clientes){
+            if(cliente.getNumero()==numero){
+                clientes.remove(cliente);
+            }
+        }
+    }
+
+    @Override
+    public void actualizarDatosCliente(Cliente cliente) {
+        int num = cliente.getNumero();
+        bajaCliente(num);
+        altaCliente(cliente);
+    }
+
+    @Override
+    public Cliente consultarCliente(int numero) {
+        Cliente cliente = null;
+        for(Cliente cc : clientes){
+            if(cc.getNumero()==numero){
+                cliente = cc;
+            }
+        }
+        return cliente;
+    }
+    
+    public void report(){
+        clientes
+            .stream()
+            .forEach(System.out::println);
+    }
+
+    @Override
+    public void altaClientes(Cliente[] clientes) {
+        for(Cliente c : clientes){
+            this.altaCliente(c);
+        }
+    }
+    
+    
 }
