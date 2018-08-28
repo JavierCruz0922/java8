@@ -1,0 +1,75 @@
+
+-- certificaciones --
+1Z0 808 asociados		150 dolares 
+1Z0 809 programadores
+-- librerias --
+java.io
+java.sql
+
+java
+javac
+javadoc
+
+-- unix --
+ligas simbolicas ln -s
+
+-- java --
+top-level class - class C
+interfaces - interfaces I
+tipos enumerados - enum E
+
+variables por scoppe
+
+java naming conventions
+
+bloques flotantes [static - not static]
+
+java operators
+
+Arrays
+
+*Problema con heap
+
+-- author - Katy Sierra books java
+
+
+Overload (Sobrecarga)
+
+1. Generalmente misma clase
+2. Modificadores no importa, mismo o diferentes
+3. Tipo de retorno no importa.
+4. Mismo nombre
+5. Diferente lista de argumentos, tipo, orden, cantidad
+6. Excepciones no importa
+7. Semanticamente hagan cosas similares
+
+Overide (Reecritura, sobreescrito)
+
+1. En una jerarquia de clases
+2. El metodo de la superclase no tiene que ser final
+3. Modificadores, es el mismo o mas permisible.  ( -, ~, #, +)
+4. Tipo de retorno:
+                    super                        sub
+                     void                      void
+                     t.p.                       mismo tipo t. p. 
+                     refencia                  misma referencia o subclases
+5. Mismo nombre
+6. Exactamente misma lista de argumentos
+7. ...
+ 
+Sobre carga 
+1. Firma exacta
+2. Promocion
+3. Autoboxing
+4. Widding
+5. Varargs 
+
+ -- instance --
+ public class SingletonClass{
+ 	private static final SingletonClass instance = new SingletonClass();
+ 	private SingletonClass(){};
+ 	public static SingletonClass getInstance(){
+ 		return instance;
+ 	}
+
+ }
