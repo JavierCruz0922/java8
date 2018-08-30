@@ -1,4 +1,14 @@
 /gs/Banca/nbproject/private/
 /gs/Banca/build/
+/gs/Banca/out/
 /gs/Lambda/nbproject/private/
 /gs/Lambda/build/
+/gs/Lambda/out/
+documents/JavaProgramming/labs/10-LambdaOperations/practices/practice1/SalesTxn10-01Prac/out/
+documents/JavaProgramming/labs/10-LambdaOperations/practices/practice2/SalesTxn10-02Prac/out/
+documents/JavaProgramming/labs/10-LambdaOperations/practices/practice3/SalesTxn10-03Prac/out/
+documents/JavaProgramming/labs/12-DateTime/examples/LocalDateExample/out/
+documents/JavaProgramming/labs/12-DateTime/examples/LocalDateTimeExample/out/
+documents/JavaProgramming/labs/12-DateTime/examples/LocalTimeExample/out/
+*.idea*
+*.iml

@@ -15,7 +15,7 @@ public class LocalTimeExample {
     nowHrsMins = now.truncatedTo(MINUTES);
     out.println("Truncate the current time to minutes: " + nowHrsMins);
     out.println("It is the " + now.toSecondOfDay()/60 + "th minute of the day.");
-    lunch = LocalTime.of(12, 30);
+    lunch = LocalTime.of(11, 59);
     out.println("Is lunch in my future? " + lunch.isAfter(now));
     long minsToLunch = now.until(lunch, MINUTES);
     out.println("Minutes til lunch: " + minsToLunch);

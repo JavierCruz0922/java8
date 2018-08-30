@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
-
-import java.time.LocalDateTime;
+package utilities;
 
 /**
  *
  * @author 180827Gpo.Salinas
  */
-public class SaldoInsuficienteException extends Exception{
+public class ClienteNoExisteException extends Exception{
     
-    private LocalDateTime fecha;
-    private String descripcionProblema;        
 }

@@ -6,6 +6,7 @@
 package servicio;
 
 import domain.Cliente;
+import utilities.ClienteNoExisteException;
 
 /**
  *
@@ -14,7 +15,7 @@ import domain.Cliente;
 public interface ServicioAClientes {
     void altaCliente(Cliente cliente);
     void altaClientes(Cliente[] clientes);
-    void bajaCliente(int numero);
-    void actualizarDatosCliente(Cliente cliente);
-    Cliente consultarCliente(int numero);
+    void bajaCliente(int numero) throws ClienteNoExisteException;
+    void actualizarDatosCliente(Cliente cliente) throws ClienteNoExisteException;
+    Cliente consultarCliente(int numero) throws ClienteNoExisteException;
 }

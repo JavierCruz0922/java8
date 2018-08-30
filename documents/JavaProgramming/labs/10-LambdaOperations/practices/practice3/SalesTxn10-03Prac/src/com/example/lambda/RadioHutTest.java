@@ -23,6 +23,7 @@ public class RadioHutTest {
         
         // Print out the total number of transactions
         System.out.print("Total Transactions: ");
+        tList.stream(). forEach(t->t.getTransactionTotal());
 
         
         

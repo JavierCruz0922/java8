@@ -16,7 +16,7 @@ public class LocalDateExample {
     out.println("Is Java's Bday in the past? " + bDate.isBefore(now));
     out.println("Is Java's Bday in a leap year? " + bDate.isLeapYear());
     out.println("Java's Bday day of the week: " + bDate.getDayOfWeek());
-    nowPlusMonth = now.plusMonths(1);
+    nowPlusMonth = now.plusMonths(1).plusDays(3);
     System.out.println("Now: " + now);
     out.println("The date a month from now: " + nowPlusMonth);
     nextTues = now.with(next(TUESDAY));

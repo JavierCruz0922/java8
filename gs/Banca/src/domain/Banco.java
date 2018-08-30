@@ -7,13 +7,15 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Optional;
+
 import servicio.ServicioAClientes;
+import utilities.ClienteNoExisteException;
 
 /**
- *
  * @author 180827Gpo.Salinas
  */
-public class Banco implements ServicioAClientes{
+public class Banco implements ServicioAClientes {
 
     private Banco banco;
     private String nombre;
@@ -21,18 +23,18 @@ public class Banco implements ServicioAClientes{
     private String rfc;
     private String telefono;
     private ArrayList<Cliente> clientes;
-    
+
     private static final Banco INSTANCE = new Banco(
-        "Banco De Mexico", 
+            "Banco De Mexico",
             new Domicilio(
-                "Av. Benito Juarez",
-                "132",
-                "Las Palmas",
-                "Estado de Mexico",
-                12345), 
-        "BANMEX01234TM",
-        "+52(55)123-4567");
-    
+                    "Av. Benito Juarez",
+                    "132",
+                    "Las Palmas",
+                    "Estado de Mexico",
+                    12345),
+            "BANMEX01234TM",
+            "+52(55)123-4567");
+
     private Banco(String nombre, Domicilio domicilio, String rfc, String telefono) {
         if (domicilio != null) {
             this.nombre = nombre;
@@ -42,8 +44,8 @@ public class Banco implements ServicioAClientes{
             this.clientes = new ArrayList<>();
         }
     }
-    
-    public static Banco getInstance(){
+
+    public static Banco getInstance() {
         return INSTANCE;
     }
 
@@ -142,44 +144,38 @@ public class Banco implements ServicioAClientes{
     }
 
     @Override
-    public void bajaCliente(int numero) {
-        for(Cliente cliente : clientes){
-            if(cliente.getNumero()==numero){
-                clientes.remove(cliente);
-            }
-        }
+    public void bajaCliente(int numero) throws ClienteNoExisteException {
+        clientes.removeIf(c -> c.getNumero() == numero);
     }
 
     @Override
-    public void actualizarDatosCliente(Cliente cliente) {
-        int num = cliente.getNumero();
-        bajaCliente(num);
+    public void actualizarDatosCliente(Cliente cliente) throws ClienteNoExisteException {
+        bajaCliente(cliente.getNumero());
         altaCliente(cliente);
     }
 
     @Override
     public Cliente consultarCliente(int numero) {
-        Cliente cliente = null;
-        for(Cliente cc : clientes){
-            if(cc.getNumero()==numero){
-                cliente = cc;
-            }
-        }
-        return cliente;
+        return clientes
+                .stream()
+                .filter(c -> c.getNumero() == numero)
+                .findFirst()
+                .orElse(null);
     }
-    
-    public void report(){
+
+    public void report() {
         clientes
-            .stream()
-            .forEach(System.out::println);
+                .stream()
+                .sorted()
+                .forEach(System.out::println);
     }
 
     @Override
     public void altaClientes(Cliente[] clientes) {
-        for(Cliente c : clientes){
+        for (Cliente c : clientes) {
             this.altaCliente(c);
         }
     }
-    
-    
+
+
 }

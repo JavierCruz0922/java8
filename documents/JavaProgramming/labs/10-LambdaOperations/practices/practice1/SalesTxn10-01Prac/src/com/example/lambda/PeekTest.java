@@ -15,11 +15,17 @@ public class PeekTest {
     Consumer<SalesTxn> taxReport = 
       t -> System.out.printf("Id: " + t.getTxnId() 
         + " Buyer: " + t.getBuyerName() + 
-        " Txn amt: $%,9.2f ", t.getTransactionTotal());
+        " Txn amt: $%,9.2f %n", t.getTransactionTotal());
     
     // Write report using peek
     System.out.println("=== Widget Pro Sales Tax in CA ===");
-
+        tList
+            .stream()
+            .peek(taxReport)
+            .filter(salesTxn -> salesTxn.getState().equals(State.CA))
+            .peek(taxReport)
+            .filter(salesTxn -> salesTxn.getProduct().equalsIgnoreCase("Widget Pro"))
+            .forEach(SalesTxn::printSummary);
         
         
     }

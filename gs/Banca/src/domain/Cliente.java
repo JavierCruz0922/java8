@@ -5,6 +5,7 @@
  */
 package domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -14,8 +15,9 @@ import servicio.ServicioACuentas;
  *
  * @author 180827Gpo.Salinas
  */
-public class Cliente implements ServicioACuentas, Comparable<Cliente> {
+public class Cliente implements ServicioACuentas, Serializable, Comparable<Cliente> {
 
+    private static long serialVersionUID = 42L;
     private int numero;
     private String nombre;
     private Domicilio domicilio;
@@ -32,32 +34,32 @@ public class Cliente implements ServicioACuentas, Comparable<Cliente> {
         private String rfc = "";
         private ArrayList<Cuenta> cuentas = null;
 
-        private Cliente.Builder numero(int numero) {
+        public Cliente.Builder numero(int numero) {
             this.numero = numero;
             return this;
         }
 
-        private Cliente.Builder nombre(String nombre) {
+        public Cliente.Builder nombre(String nombre) {
             this.nombre = nombre;
             return this;
         }
 
-        private Cliente.Builder domicilio(Domicilio domicilio) {
+        public Cliente.Builder domicilio(Domicilio domicilio) {
             this.domicilio = domicilio;
             return this;
         }
 
-        private Cliente.Builder fechaNacimiento(LocalDate fechaNacimiento) {
+        public Cliente.Builder fechaNacimiento(LocalDate fechaNacimiento) {
             this.fechaNacimiento = fechaNacimiento;
             return this;
         }
 
-        private Cliente.Builder rfc(String rfc) {
+        public Cliente.Builder rfc(String rfc) {
             this.rfc = rfc;
             return this;
         }
 
-        private Cliente.Builder cuentas(ArrayList cuentas) {
+        public Cliente.Builder cuentas(ArrayList cuentas) {
             this.cuentas = cuentas;
             return this;
         }
