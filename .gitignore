@@ -10,5 +10,9 @@ documents/JavaProgramming/labs/10-LambdaOperations/practices/practice3/SalesTxn1
 documents/JavaProgramming/labs/12-DateTime/examples/LocalDateExample/out/
 documents/JavaProgramming/labs/12-DateTime/examples/LocalDateTimeExample/out/
 documents/JavaProgramming/labs/12-DateTime/examples/LocalTimeExample/out/
+documents/JavaProgramming/labs/12-DateTime/examples/examplej10/out/production/examplej10/
+documents/JavaProgramming/labs/15-Concurrency/examples/CyclicBarrierExample/out/
+documents/JavaProgramming/labs/15-Concurrency/examples/ExecutorExample/out/
+documents/JavaProgramming/labs/19-Localization/practices/practice1/Localized19-01Prac/out/
 *.idea*
 *.iml

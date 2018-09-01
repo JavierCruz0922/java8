@@ -27,7 +27,7 @@ System.out.println("=== Widget Pro Quantity in CO ===");
 /usr/libexec/java_home -V
 
 #!/bin/bash
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.78)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 setjdk() {
    export JAVA_HOME=$(/usr/libexec/java_home -v $1)

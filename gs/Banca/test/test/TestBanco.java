@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class TestBanco {
     public static void main(String[] args) {
         Banco banco = Banco.getInstance();
-        Domicilio dom = new Domicilio("Av. Benito", "123", "Las Palomas", "CDMX", 123);
+        Domicilio dom = new Domicilio("Av. Benito", 123, "Las Palomas", "CDMX", 123);
         Cliente[] clientes = new Cliente[]{
             new Cliente(123, "Juan", "ABCD123456123", LocalDate.of(1992, 06, 01), dom),
             new Cliente(2172, "Hugo", "PORE948556121", LocalDate.of(1982, 10, 11), dom),

@@ -12,7 +12,7 @@ public class CyclicBarrierExample implements Runnable{
 
   
     public static void main(String[] args) {
-      ExecutorService es = Executors.newFixedThreadPool(4);
+      ExecutorService es = Executors.newFixedThreadPool(3);
       
       CyclicBarrierExample ex = new CyclicBarrierExample();
       es.submit(ex);

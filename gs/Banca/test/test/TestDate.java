@@ -15,7 +15,7 @@ public class TestDate {
     public static void main(String[] args) {
         Domicilio domicilio = new Domicilio.Builder()
                 .calle("Av. Benito Juarez")
-                .numero("143")
+                .numero(143)
                 .colonia("Atlacomulco")
                 .estado("Michoacan")
                 .codigoPostal(36251)
